@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>{{ $store.state.message }}</h1>
+    <h1>{{ message }}</h1>
     <HelloVuex/>
   </div>
 </template>
@@ -10,6 +10,11 @@ import HelloVuex from '@/components/HelloVuex.vue'
 
 export default {
   name: 'App',
+  computed: {
+    message: function() {
+      return this.$store.state.message
+    }
+  },
   components: {
     HelloVuex
   }
