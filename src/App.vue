@@ -10,6 +10,9 @@ import HelloVuex from '@/components/HelloVuex.vue'
 
 export default {
   name: 'App',
+  components:{
+    HelloVuex
+  },
   computed: {
     message: function() {
       return this.$store.state.message
