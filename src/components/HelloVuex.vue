@@ -1,8 +1,14 @@
 <template>
-    <h2>{{ $store.state.message }}</h2>
+    <ul>
+        <li v-for="user in users" :key="user.name">{{ user.name }}({{ user.email }})</li>
+    </ul>
 </template>
 <script>
 export default {
-    name: 'HelloVuex'
+    computed :{
+        users : function(){
+            return this.$store.state.users
+        }
+    }
 }
 </script>
