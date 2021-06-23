@@ -12,6 +12,11 @@ export default new Vuex.Store({
       {name:'Ken', email:'Ken@example.com', age:29},
     ]
   },
+  getters: {
+    users : function(state){
+      return state.users.filter(user => user.age < 30)
+    }
+  },
   mutations: {
   },
   actions: {

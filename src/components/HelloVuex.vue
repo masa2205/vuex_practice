@@ -7,7 +7,7 @@
 export default {
     computed :{
         users : function(){
-            return this.$store.state.users
+            return this.$store.getters.users
         }
     }
 }
