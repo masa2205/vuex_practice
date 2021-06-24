@@ -5,19 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    message:'Hello Vuex',
-    users:[
-      {name:'John', email:'john@example.com', age:22},
-      {name:'Merry', email:'Merry@example.com', age:33},
-      {name:'Ken', email:'Ken@example.com', age:29},
-    ]
+    count: 0
   },
   getters: {
-    users : function(state){
-      return state.users.filter(user => user.age < 30)
-    }
   },
   mutations: {
+    increment : function(state) {
+      state.count++
+    }
   },
   actions: {
   },
