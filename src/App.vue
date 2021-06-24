@@ -1,26 +1,25 @@
 <template>
   <div id="app">
-    <h1>{{ message }}</h1>
-    <HelloVuex/>
+    <p>
+      <button @click="increment">UP</button>
+    </p>
+    <h2>Count:{{ count }}</h2>
   </div>
 </template>
 
 <script>
-import HelloVuex from '@/components/HelloVuex.vue'
-
 export default {
   name: 'App',
-  components:{
-    HelloVuex
-  },
-  computed: {
-    message: function() {
-      return this.$store.state.message
+  methods: {
+    increment : function() {
+      this.$store.commit('increment')
     }
   },
-  components: {
-    HelloVuex
-  }
+  computed: {
+    count : function(){
+      return this.$store.state.count
+    }
+  },
 }
 </script>
 
