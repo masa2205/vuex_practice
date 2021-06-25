@@ -1,26 +1,30 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0
+    users:[],
   },
   getters: {
   },
   mutations: {
-    increment : function(state) {
-      state.count++
+    setUsers : function(state,users) {
+      state.users = users
     }
   },
   actions: {
-    incrementOne : function(context){
-      setTimeout(()=>{
-        context.commit('increment')
-      },3000)
+    getUsers: function({commit}){
+      return
+  axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(response => {
+          commit('setUsers',response.data)
+        })
     }
   },
+
   modules: {
   }
 })
