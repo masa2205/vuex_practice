@@ -15,8 +15,10 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    incrementOne : function({commit}){
-      commit('increment')
+    incrementOne : function(context){
+      setTimeout(()=>{
+        context.commit('increment')
+      },3000)
     }
   },
   modules: {
