@@ -12,7 +12,7 @@ export default {
   name: 'App',
   methods: {
     increment : function() {
-      this.$store.commit('increment')
+      this.$store.commit('increment',5)
     }
   },
   computed: {
